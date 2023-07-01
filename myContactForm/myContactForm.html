@@ -1,0 +1,67 @@
+<template>
+    <lightning-card>
+        <div slot="title">
+            <h3>
+                <lightning-icon icon-name="standard:contact" size="small"></lightning-icon> Cruise (Driverless is here)
+                </h3>
+            </div>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
+                <div class="slds-form-element">
+                <lightning-input label="First Name" value={firstName} onchange={contactChangeVal}></lightning-input>
+                </div>
+            </div>
+            <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
+            <div class="slds-form-element">
+                <lightning-input label="Last Name" value={lastName} onchange={contactChangeVal} required></lightning-input>
+                </div>
+            </div>
+           <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
+            <div class="slds-form-element">
+                <lightning-record-edit-form object-api-name="Contact" label="Account Name" id="createContactForm" onsuccess={insertContactAction} >
+                    <lightning-input-field label="Account Name"  field-name="AccountId" onchange={handleAccountSelection} required > </lightning-input-field>
+                </lightning-record-edit-form>
+            </div>
+        </div>
+
+            <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
+            <div class="slds-form-element">
+                <lightning-input label="Email" value={emailId} onchange={contactChangeVal} ></lightning-input>
+                </div>
+            </div>
+            <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
+            <div class="slds-form-element">
+                <lightning-input label="Phone" value={phone} onchange={contactChangeVal} ></lightning-input>
+                </div>
+            </div>
+                <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
+                <lightning-combobox
+                name="progress"
+                label="Age"
+                value={age}
+                placeholder="Select Age Range"
+                options={options}
+                onchange={contactChangeVal} ></lightning-combobox>
+    
+            </div>
+        </div>
+
+        <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
+            <div class="slds-form-element">
+                <lightning-input type="currency"  label="Spend $$$" value={spend} onchange={contactChangeVal} ></lightning-input>
+                </div>
+            </div>
+
+            <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
+            <div class="slds-form-element slds-p-top_large ">
+                <lightning-button label="Create Contact Record" variant="brand" onclick={insertContactAction}></lightning-button>
+                <br>
+                <br>
+                <div class="slds-box slds-button slds-button_success">  
+                    <lightning-button label="Navigate To Contact Record" variant="success" onclick={navigateToContactPage}> </lightning-button>  
+                  </div> 
+            </div>
+            </div>
+            
+    </lightning-card>
+    </template>
