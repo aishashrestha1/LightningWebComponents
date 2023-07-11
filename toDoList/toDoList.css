@@ -1,0 +1,16 @@
+.header {
+
+    background-color: lightblue;
+    border: 1px rgb(168, 166, 166);
+    color: black;
+    font-weight: 900;
+}
+
+.wrapper {
+    background-color: lightblue;
+    border:50px solid lightblue;
+  }
+
+  .field {
+    display: inline-block;
+  }
